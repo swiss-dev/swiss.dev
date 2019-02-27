@@ -23,9 +23,12 @@
     "@angular/platform-browser": "7.2.6",
     "@angular/platform-browser-dynamic": "7.2.6",
     "@angular/router": "7.2.6",
+    "@types/typed.js": "^2.0.9",
+    "angulartics2": "^7.4.1",
     "core-js": "2.6.5",
     "particles.js": "^2.0.0",
     "rxjs": "6.4.0",
+    "typed.js": "^2.0.10",
     "zone.js": "0.8.29"
   },
   "devDependencies": {
