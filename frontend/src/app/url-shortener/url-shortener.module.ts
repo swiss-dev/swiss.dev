@@ -5,7 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
   MatDialogModule,
-  MatFormFieldModule,
+  MatFormFieldModule, MatIconModule,
   MatInputModule,
   MatProgressSpinnerModule,
   MatStepperModule
@@ -14,6 +14,7 @@ import {FormsModule} from '@angular/forms';
 import {U2fModule} from '../u2f/u2f.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
+import {ClipboardModule} from 'ngx-clipboard';
 
 @NgModule({
   declarations: [ShortenerDialogComponent],
@@ -28,6 +29,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatProgressSpinnerModule,
     MatDialogModule,
     HttpClientModule,
+    ClipboardModule,
+    MatIconModule,
     U2fModule,
     MatStepperModule,
     FlexLayoutModule

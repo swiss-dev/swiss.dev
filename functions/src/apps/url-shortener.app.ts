@@ -14,7 +14,7 @@ async function generateId(url: string, offset = 0): Promise<string> {
     .digest('hex');
   hash = hash.slice(hash.length - 8, hash.length);
   const doc = await firestore().collection('urls').doc(hash).get();
-  if (doc.exists) {
+  if (doc.exists && doc.data().url !== url) {
     return await generateId(url, offset + 1);
   } else {
     return hash;

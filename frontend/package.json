@@ -28,6 +28,7 @@
     "@types/typed.js": "^2.0.9",
     "angulartics2": "^7.4.1",
     "core-js": "2.6.5",
+    "ngx-clipboard": "^12.0.0",
     "particles.js": "^2.0.0",
     "rxjs": "6.4.0",
     "typed.js": "^2.0.10",

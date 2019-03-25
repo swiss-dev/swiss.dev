@@ -29,7 +29,11 @@
       </mat-dialog-actions>
     </mat-step>
     <mat-step label="Copy Link" #completeStep>
-      <h3 class="mat-subheading-2">Done. Your page is available at <a [href]="shortenedUrl">{{shortenedUrl}}</a>.</h3>
+      <h3 class="mat-subheading-2">Done. Your page is available at <a target="_blank" [href]="shortenedUrl">{{shortenedUrl}}</a>
+        <button matTooltip="Copy to Clipboard" ngxClipboard [cbContent]="shortenedUrl" mat-icon-button>
+          <mat-icon>assignment</mat-icon>
+        </button>.
+      </h3>
     </mat-step>
   </mat-horizontal-stepper>
 </mat-dialog-content>

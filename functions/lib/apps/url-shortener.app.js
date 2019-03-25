@@ -22,7 +22,7 @@ function generateId(url, offset = 0) {
             .digest('hex');
         hash = hash.slice(hash.length - 8, hash.length);
         const doc = yield firebase_admin_1.firestore().collection('urls').doc(hash).get();
-        if (doc.exists) {
+        if (doc.exists && doc.data().url !== url) {
             return yield generateId(url, offset + 1);
         }
         else {
