@@ -1,5 +1,6 @@
 {
   "projects": {
-    "prod": "swiss-dev-fd89f"
+    "prod": "swiss-dev-fd89f",
+    "default": "swiss-dev-fd89f"
   }
 }

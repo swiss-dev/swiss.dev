@@ -1,0 +1,35 @@
+<h2 matDialogTitle>URL Shortener</h2>
+<mat-dialog-content>
+  <mat-horizontal-stepper #stepper linear>
+    <mat-step #inputStep label="Enter URL">
+      <form #form="ngForm" (submit)="submit()">
+        <mat-form-field [style.width.%]="100">
+          <input name="url" #urlField="ngModel" [required]="true" cdkFocusInitial matInput [(ngModel)]="url" />
+          <mat-label>URL</mat-label>
+          <mat-error *ngIf="urlField.invalid">Please specify the url to shorten.</mat-error>
+        </mat-form-field>
+      </form>
+      <mat-dialog-actions align="end">
+        <button mat-raised-button mat-dialog-close>Cancel</button>
+        <button mat-raised-button matStepperNext color="primary" type="submit" [disabled]="form.invalid">Verify Identity</button>
+      </mat-dialog-actions>
+    </mat-step>
+    <mat-step #identityStep label="Verify Identity">
+
+      <div fxLayout="row" fxLayoutAlign="center center" [style.height.px]="300">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px">
+          <mat-progress-spinner diameter="100" mode="indeterminate"></mat-progress-spinner>
+          <h3 class="mat-subheading-2" *ngIf="!loading">Please press the button on your Yubikey.</h3>
+          <h3 class="mat-subheading-2" *ngIf="loading">Shortening your link.</h3>
+        </div>
+      </div>
+
+      <mat-dialog-actions align="end">
+        <button mat-raised-button mat-dialog-close>Cancel</button>
+      </mat-dialog-actions>
+    </mat-step>
+    <mat-step label="Copy Link" #completeStep>
+      <h3 class="mat-subheading-2">Done. Your page is available at <a [href]="shortenedUrl">{{shortenedUrl}}</a>.</h3>
+    </mat-step>
+  </mat-horizontal-stepper>
+</mat-dialog-content>
