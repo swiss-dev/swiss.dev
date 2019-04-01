@@ -8,7 +8,7 @@ import {debounceTime, subscribeOn, tap} from 'rxjs/operators';
 export class KonamiService {
 
   private code: string[] =
-    ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'a', 'b', 'Enter'];
+    ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
   private keys: string[] = [];
   private _konami: Subscription = fromEvent(document, 'keydown')
       .pipe(
